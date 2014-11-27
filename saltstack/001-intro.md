@@ -16,6 +16,7 @@
 * **[http://talks.apsl.net/saltstack](http://talks.apsl.net/saltstack)**
     * [Hecha con landslide](https://github.com/adamzap/landslide)
     * [Código en github](https://github.com/eduherraiz/saltstack_talk)
+    * Gráfico final con [Gliffy](https://www.gliffy.com)
 ---
 
 # Agenda

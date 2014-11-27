@@ -84,7 +84,7 @@
             </aside>
             
             <aside class="page_number">
-              1/33
+              1/41
             </aside>
           </footer>
           <div class="apsl">
@@ -113,6 +113,7 @@
 <li><strong><a href="http://talks.apsl.net/saltstack">http://talks.apsl.net/saltstack</a></strong><ul>
 <li><a href="https://github.com/adamzap/landslide">Hecha con landslide</a></li>
 <li><a href="https://github.com/eduherraiz/saltstack_talk">Código en github</a></li>
+<li>Gráfico final con <a href="https://www.gliffy.com">Gliffy</a></li>
 </ul></section>
             
           </div>
@@ -129,7 +130,7 @@
             </aside>
             
             <aside class="page_number">
-              2/33
+              2/41
             </aside>
           </footer>
           <div class="apsl">
@@ -168,7 +169,7 @@
             </aside>
             
             <aside class="page_number">
-              3/33
+              3/41
             </aside>
           </footer>
           <div class="apsl">
@@ -200,7 +201,7 @@
             </aside>
             
             <aside class="page_number">
-              4/33
+              4/41
             </aside>
           </footer>
           <div class="apsl">
@@ -242,7 +243,7 @@
             </aside>
             
             <aside class="page_number">
-              5/33
+              5/41
             </aside>
           </footer>
           <div class="apsl">
@@ -276,7 +277,7 @@
             </aside>
             
             <aside class="page_number">
-              6/33
+              6/41
             </aside>
           </footer>
           <div class="apsl">
@@ -318,7 +319,7 @@
             </aside>
             
             <aside class="page_number">
-              7/33
+              7/41
             </aside>
           </footer>
           <div class="apsl">
@@ -337,10 +338,10 @@
             
             
             <section><ul>
-<li>Muchos servidores</li>
-<li>Muchos servicios</li>
 <li>Muchas aplicaciones</li>
 <li>Muchos entornos</li>
+<li>Muchos servicios</li>
+<li>Muchos servidores</li>
 <li><strong>Y acelerando!</strong></li>
 </ul></section>
             
@@ -358,7 +359,7 @@
             </aside>
             
             <aside class="page_number">
-              8/33
+              8/41
             </aside>
           </footer>
           <div class="apsl">
@@ -390,7 +391,7 @@
             </aside>
             
             <aside class="page_number">
-              9/33
+              9/41
             </aside>
           </footer>
           <div class="apsl">
@@ -437,7 +438,7 @@
             </aside>
             
             <aside class="page_number">
-              10/33
+              10/41
             </aside>
           </footer>
           <div class="apsl">
@@ -470,6 +471,7 @@
 <li><strong>Documentación</strong> de bajo nivel <strong>innecesaria</strong></li>
 </ul>
 </li>
+<li><strong>Trivializando operaciones</strong></li>
 </ul></section>
             
           </div>
@@ -486,7 +488,7 @@
             </aside>
             
             <aside class="page_number">
-              11/33
+              11/41
             </aside>
           </footer>
           <div class="apsl">
@@ -501,7 +503,7 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Opciones de los gestores de configuración</h1></header>
+            <header><h1>Opciones de gestores de configuración</h1></header>
             
             
             <section><ul>
@@ -529,7 +531,7 @@
             </aside>
             
             <aside class="page_number">
-              12/33
+              12/41
             </aside>
           </footer>
           <div class="apsl">
@@ -550,16 +552,16 @@
             <section><ul>
 <li>Ruby</li>
 <li>Desde 2005</li>
-<li>Cliente - servidor (puppet-master)</li>
+<li>Cliente - servidor (puppet-master), por tcp</li>
 <li>El cliente pide al servidor que se quiere reconfigurar<ul>
 <li>El cliente recoje cada x minutos recetas y las aplica</li>
 <li>Ejecución manual del cliente</li>
 <li>Orquestación con Mcollective</li>
 </ul>
 </li>
-<li><a href="https://forge.puppetlabs.com">Muy buenas recetas ya hechas</a></li>
-<li><a href="https://speakerdeck.com/creantbits/puppet-labs">Presentación mía sobre puppet</a></li>
 <li><strong>Muy robusto</strong>, aunque desarrollar módulos propios no es sencillo</li>
+<li><a href="https://forge.puppetlabs.com">Muy buenas recetas ya hechas</a></li>
+<li><a href="https://speakerdeck.com/creantbits/puppet-labs">Presentación propia sobre puppet</a></li>
 </ul></section>
             
           </div>
@@ -576,7 +578,7 @@
             </aside>
             
             <aside class="page_number">
-              13/33
+              13/41
             </aside>
           </footer>
           <div class="apsl">
@@ -621,7 +623,7 @@
             </aside>
             
             <aside class="page_number">
-              14/33
+              14/41
             </aside>
           </footer>
           <div class="apsl">
@@ -662,7 +664,7 @@
             </aside>
             
             <aside class="page_number">
-              15/33
+              15/41
             </aside>
           </footer>
           <div class="apsl">
@@ -694,7 +696,7 @@
             </aside>
             
             <aside class="page_number">
-              16/33
+              16/41
             </aside>
           </footer>
           <div class="apsl">
@@ -713,11 +715,14 @@
             
             
             <section><ul>
-<li>No solo configuración, apunta a ser una <strong>solución completa</strong></li>
+<li>No solo configuración, apunta a ser una <strong>solución completa</strong><ul>
+<li>Orquestación, aprovisionamiento, ...</li>
+</ul>
+</li>
 <li><strong>Eficiencia</strong></li>
-<li><strong>Pythónico</strong><ul>
+<li><strong>Pythónico</strong> a todos los niveles<ul>
 <li>Escrito en <strong>python</strong></li>
-<li>Recetas en formato <strong>YAML</strong></li>
+<li>Recetas en formato de definición <strong>YAML</strong></li>
 <li>Plantillas en formato <strong>jinja</strong></li>
 </ul>
 </li>
@@ -741,7 +746,7 @@
             </aside>
             
             <aside class="page_number">
-              17/33
+              17/41
             </aside>
           </footer>
           <div class="apsl">
@@ -765,7 +770,10 @@
 <li>Antes ZeroMQ, pero tenía problemas de escalabilidad</li>
 </ul>
 </li>
-<li>El minion <strong>consume la cola de mensajes</strong>, sin puertos abiertos</li>
+<li>El minion <strong>consume la cola de mensajes</strong>, sin puertos abiertos<ul>
+<li>Periodicamente cada 5 segundos (configurable)</li>
+</ul>
+</li>
 <li><strong>Conexión cifrada</strong>, requiere validar la key del cliente en el servidor</li>
 <li><strong>Minion independiente</strong>, permite <strong>reconfiguración sin servidor</strong></li>
 </ul></section>
@@ -784,7 +792,7 @@
             </aside>
             
             <aside class="page_number">
-              18/33
+              18/41
             </aside>
           </footer>
           <div class="apsl">
@@ -806,7 +814,7 @@
 <li>Receta</li>
 <li>Estado</li>
 <li>Módulo</li>
-<li>Archivo top.sls</li>
+<li>Asociación de minions con recetas</li>
 <li>Datos<ul>
 <li>Grains</li>
 <li>Pillar</li>
@@ -828,7 +836,7 @@
             </aside>
             
             <aside class="page_number">
-              19/33
+              19/41
             </aside>
           </footer>
           <div class="apsl">
@@ -847,26 +855,28 @@
             
             
             <section><ul>
-<li>Archivo YAML con la de definición de estados</li>
-<li>Discriminas en la receta según datos (grains o pillar)</li>
+<li>Archivo <a href="http://es.wikipedia.org/wiki/YAML">YAML</a> con la de <strong>definición de estados</strong></li>
+<li>Puedes <strong>discriminar</strong> en la receta <strong>según datos</strong> (grains o pillar)</li>
 </ul>
 <h1>Ejemplo</h1>
-<div class="highlight"><pre><span class="c1"># /srv/salt/mimysql.sls</span>
-<span class="l-Scalar-Plain">mysql-server</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pkg</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">installed</span>
-    <span class="l-Scalar-Plain">service.running</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">reload</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">require</span><span class="p-Indicator">:</span>
-            <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">pkg</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql-server</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">watch</span><span class="p-Indicator">:</span>
-            <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">file</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/etc/mysql/conf.d/default.cnf</span>
+<div class="highlight"><pre><span class="c"># /srv/salt/mimysql.sls</span>
+mysql-server:
+    pkg:
+        - installed
+    service.running:
+        - name: mysql
+        - reload: True
+        - require:
+            - pkg: mysql-server
+        - watch:
+            - file: /etc/mysql/conf.d/default.cnf
 
-<span class="l-Scalar-Plain">edu</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">mysql_user.present</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">apsl</span>
+<span class="o">{</span>% <span class="k">if</span> pillar<span class="o">[</span><span class="s1">&#39;administrado&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;apsl&#39;</span> %<span class="o">}</span>
+edu:
+    mysql_user.present:
+        - host: localhost
+        - password: apsl
+<span class="o">{</span>% endif %<span class="o">}</span>
 </pre></div>
 </section>
             
@@ -884,7 +894,7 @@
             </aside>
             
             <aside class="page_number">
-              20/33
+              20/41
             </aside>
           </footer>
           <div class="apsl">
@@ -925,7 +935,7 @@
             </aside>
             
             <aside class="page_number">
-              21/33
+              21/41
             </aside>
           </footer>
           <div class="apsl">
@@ -964,7 +974,7 @@
             </aside>
             
             <aside class="page_number">
-              22/33
+              22/41
             </aside>
           </footer>
           <div class="apsl">
@@ -979,11 +989,11 @@
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Archivo top.sls</h1></header>
+            <header><h1>Asociación de minions con recetas</h1></header>
             
             
             <section><ul>
-<li>Relacionar minions con recetas</li>
+<li>Se hace mediante un archivo de definición top.sls</li>
 </ul>
 <h1>Ejemplo</h1>
 <div class="highlight"><pre><span class="c1"># /srv/salt/top.sls</span>
@@ -1018,7 +1028,7 @@
             </aside>
             
             <aside class="page_number">
-              23/33
+              23/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1033,26 +1043,18 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Datos, grains y pillar</h1></header>
+            <header><h1>Datos, grains</h1></header>
             
             
             <section><ul>
-<li>Grains<ul>
 <li><strong>Datos de sistema</strong> que se guardan <strong>al iniciar el minion</strong><ul>
 <li>Sistema operativo</li>
 <li>Versiones</li>
 <li>Información de hardware: MAC, IP's</li>
 </ul>
 </li>
-<li><strong>Datos estáticos</strong>, que no se modifiquen</li>
-<li>Consulta con: salt host grains.items</li>
-</ul>
-</li>
-<li>Pillar<ul>
-<li>Diccionario de <strong>datos propios</strong></li>
-<li>Para pasar datos especificos de servicio o aplicación</li>
-<li>Reaprovechar recetas</li>
-<li>Consulta con: salt host pillar.items</li>
+<li>Puedes guardar tus <strong>datos estáticos</strong> que no se modifiquen<ul>
+<li>Desde /etc/salt/minion</li>
 </ul>
 </li>
 </ul></section>
@@ -1071,7 +1073,51 @@
             </aside>
             
             <aside class="page_number">
-              24/33
+              24/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/015-saltstack.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Datos, pillar</h1></header>
+            
+            
+            <section><ul>
+<li>Diccionario de <strong>datos propios</strong></li>
+<li>Archivos de definición YAML</li>
+<li>Para pasar datos especificos de servicio o aplicación</li>
+<li><strong>Reaprovechar recetas</strong></li>
+<li><strong>Ruta</strong> de los archivos por defecto: /srv/pillar</li>
+<li><strong>Asociar datos con hosts</strong><ul>
+<li>Idem que con recetas: /srv/pillar/top.sls</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/015-saltstack.md">saltstack/015-saltstack.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1090,11 +1136,15 @@
             
             
             <section><ul>
+<li>Saltstack se complementa con una serie de utilidades<ul>
 <li>salt-renderer</li>
 <li>salt-returner</li>
 <li>salt-runner</li>
 <li>salt-cloud</li>
 <li>salt-formulas</li>
+<li>Peer communication</li>
+</ul>
+</li>
 </ul></section>
             
           </div>
@@ -1111,7 +1161,7 @@
             </aside>
             
             <aside class="page_number">
-              25/33
+              26/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1131,11 +1181,11 @@
             
             <section><ul>
 <li><strong>Generar los diccionarios de definición</strong> de otra manera que no sea yml</li>
-<li>Independiente. En top.sls, recetas o pillar. </li>
-<li>En el archivo de definicion lo marcamos con la primera linea (shebang)</li>
+<li>Independiente de donde. En top.sls, recetas o pillar. </li>
 <li><strong>Varios renderers para escoger</strong>: plantillas jinja, mako, python</li>
+<li>En el archivo de definición lo marcamos con la primera linea (shebang)</li>
 <li><a href="http://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.py.html">Ejemplo</a></li>
-<li>Lo utilizamos para traer datos de aplicaciones django desde nuestro backend</li>
+<li>Lo utilizamos para traer datos de aplicaciones desde nuestro backend</li>
 </ul></section>
             
           </div>
@@ -1152,7 +1202,7 @@
             </aside>
             
             <aside class="page_number">
-              26/33
+              27/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1173,7 +1223,7 @@
             <section><ul>
 <li>Por defecto los valores devueltos por los comandos salt son devueltos al master</li>
 <li><strong>Recoger los resultados devueltos</strong> de las configuraciones para tratarlos o almacenarlos</li>
-<li>Útil para un backend propio </li>
+<li>Útil para un frontend propio de estadísticas</li>
 <li><a href="http://docs.saltstack.com/en/latest/ref/returners/">http://docs.saltstack.com/en/latest/ref/returners/</a></li>
 </ul></section>
             
@@ -1191,7 +1241,7 @@
             </aside>
             
             <aside class="page_number">
-              27/33
+              28/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1203,15 +1253,32 @@
       
       <!-- slide source: saltstack/015-saltstack.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>salt-runner</h1></header>
             
             
             <section><ul>
-<li>Permite ejecutar en varios servidores orquestando</li>
-</ul></section>
+<li>Código python <strong>similar a un módulo</strong></li>
+<li>Pero <strong>se ejecuta siempre en el salt-master</strong></li>
+<li>Disponibles <a href="http://docs.saltstack.com/en/latest/ref/runners/all/index.html#all-salt-runners">runners propios de salt</a></li>
+<li>Interesante <strong>para orquestar ejecución en diferentes hosts</strong></li>
+</ul>
+<h1>Ejemplo</h1>
+<div class="highlight"><pre><span class="c"># Import salt modules</span>
+<span class="kn">import</span> <span class="nn">salt.client</span>
+
+<span class="k">def</span> <span class="nf">up</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Print a list of all of the minions that are up</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">salt</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">LocalClient</span><span class="p">(</span><span class="n">__opts__</span><span class="p">[</span><span class="s">&#39;conf_file&#39;</span><span class="p">])</span>
+    <span class="n">minions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="s">&#39;test.ping&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">minion</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">minions</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">minion</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1227,7 +1294,52 @@
             </aside>
             
             <aside class="page_number">
-              28/33
+              29/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/015-saltstack.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Ejecución ejemplo</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c"># salt-run test.up</span>
+acan.sandosmx.com
+agenda500-db.dov.apsl.net
+agenda500-worker.dov.apsl.net
+arqueobcn-db.dov.apsl.net
+arqueobcn-worker.dov.apsl.net
+bb02.v5tech.es
+bb03.v5tech.es
+bb04.v5tech.es
+...
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/015-saltstack.md">saltstack/015-saltstack.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1276,7 +1388,7 @@
             </aside>
             
             <aside class="page_number">
-              29/33
+              31/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1296,7 +1408,7 @@
             
             <section><ul>
 <li>Recetas compartidas comunitariamente</li>
-<li><a href="http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html">Información oficial de instalacion</a></li>
+<li><a href="http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html">Información oficial de instalación</a></li>
 <li><strong>Permite GitFs</strong> desde archivo de config o copiando a disco</li>
 <li><strong><a href="https://github.com/saltstack-formulas">Hay muchas preparadas</a></strong></li>
 <li><a href="https://github.com/saltstack-formulas/mysql-formula">Ejemplo</a></li>
@@ -1317,7 +1429,47 @@
             </aside>
             
             <aside class="page_number">
-              30/33
+              32/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/015-saltstack.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Peer communication</h1></header>
+            
+            
+            <section><ul>
+<li>Permite <strong>desde un minion ejecutar modulos en otro minion</strong></li>
+<li>Se definen <strong>permisos</strong> en /etc/salt/master</li>
+<li><strong>Desde un estado</strong></li>
+<li>Utilizando el <strong>modulo publish</strong></li>
+<li><a href="http://docs.saltstack.com/en/latest/ref/peer.html">Más Información</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/015-saltstack.md">saltstack/015-saltstack.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              33/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1363,7 +1515,7 @@
             </aside>
             
             <aside class="page_number">
-              31/33
+              34/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1391,9 +1543,9 @@ sudo apt-get -y dist-upgrade
 
 <span class="c"># Instalamos y configuramos el salt-minion con el host master salt.apsl.net</span>
 <span class="nb">echo </span>deb http://ppa.launchpad.net/saltstack/salt/ubuntu <span class="sb">`</span>lsb_release -sc<span class="sb">`</span> main <span class="se">\ </span>
-| sudo tee /etc/apt/sources.list.d/saltstack.list
+<span class="p">|</span> sudo tee /etc/apt/sources.list.d/saltstack.list
 wget -q -O- <span class="s2">&quot;http://keyserver.ubuntu.com:11371/pks/lookup?op=get&amp;search=0x4759FA960E27C0A6&quot;</span> <span class="se">\ </span>
-| sudo apt-key add -
+<span class="p">|</span> sudo apt-key add -
 sudo apt-get update
 sudo apt-get install -y salt-minion
 sudo sed -i <span class="s1">&#39;s/\#master\:\ salt/master\:\ salt\.apsl\.net/&#39;</span> /etc/salt/minion
@@ -1417,7 +1569,7 @@ sudo apt-get autoremove
             </aside>
             
             <aside class="page_number">
-              32/33
+              35/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1436,15 +1588,62 @@ sudo apt-get autoremove
             
             
             <section><ul>
-<li><em>salt mihost state.sls mireceta</em><ul>
+<li><em>salt-key -L</em><ul>
+<li>Listar los minions asociados y por asociar</li>
+</ul>
+</li>
+<li><em>salt-key -a host</em><ul>
+<li>Asociar un minion que está pendiente</li>
+</ul>
+</li>
+<li><em>salt-key -d host</em><ul>
+<li>Desasociar un minion que está pendiente    </li>
+</ul>
+</li>
+<li><strong><em>salt mihost state.sls mireceta</em></strong><ul>
 <li>Aplicar la receta mireceta.sls a mihost</li>
 </ul>
 </li>
-<li><em>salt mihost state.highstate</em><ul>
+<li><strong><em>salt mihost state.highstate</em></strong><ul>
 <li>Sincroniza todo custom modules|states, pillar, recetas</li>
 <li>Aplica recetas del top.sls asociadas a mihost</li>
 </ul>
 </li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/015-saltstack.md">saltstack/015-saltstack.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              36/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/015-saltstack.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Operativa</h1></header>
+            
+            
+            <section><ul>
 <li><em>salt -v mihost comando</em><ul>
 <li>Para incremetar el verbose del comando</li>
 </ul>
@@ -1477,7 +1676,7 @@ sudo apt-get autoremove
             </aside>
             
             <aside class="page_number">
-              33/33
+              37/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1487,10 +1686,12 @@ sudo apt-get autoremove
         </div>
       </div>
       
-      <!-- slide source:  -->
+      <!-- slide source: saltstack/020-casodeuso.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
+            
+            <header><h1>Caso de uso</h1></header>
             
             
           </div>
@@ -1502,8 +1703,121 @@ sudo apt-get autoremove
           </div>
           <footer>
             
+            <aside class="source">
+              Source: <a href="saltstack/020-casodeuso.md">saltstack/020-casodeuso.md</a>
+            </aside>
+            
             <aside class="page_number">
-              /33
+              38/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/020-casodeuso.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Caso de uso</h1></header>
+            
+            
+            <section><p><img src='img/casodeuso.png' /></p>
+<!-- .fx: imageslide --></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/020-casodeuso.md">saltstack/020-casodeuso.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              39/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/020-casodeuso.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Salteando</h1></header>
+            
+            
+            <section><ul>
+<li><strong>Muchas horas de preparación para hacer todo eso con un comando</strong></li>
+<li>Pero a partir de ahí la vida puede ser maravillosa<ul>
+<li>http://xkcd.com/303/</li>
+</ul>
+</li>
+</ul>
+<p><img src='img/compiling.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/020-casodeuso.md">saltstack/020-casodeuso.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              40/41
+            </aside>
+          </footer>
+          <div class="apsl">
+            Saltstack · Noviembre 2014 · apsl.net · @eduherraiz
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: saltstack/020-casodeuso.md -->
+      <div class="slide-wrapper">
+        <div class="slide imageslide">
+          <div class="inner">
+            
+            
+            <section><p><img src='img/salteando.jpg' /></p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="saltstack/020-casodeuso.md">saltstack/020-casodeuso.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              41/41
             </aside>
           </footer>
           <div class="apsl">
@@ -1589,7 +1903,7 @@ sudo apt-get autoremove
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Opciones de los gestores de configuración</a></th>
+        <th><a href="#slide12">Opciones de gestores de configuración</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
@@ -1655,68 +1969,116 @@ sudo apt-get autoremove
       
       
       <tr id="toc-row-23">
-        <th><a href="#slide23">Archivo top.sls</a></th>
+        <th><a href="#slide23">Asociación de minions con recetas</a></th>
         <td><a href="#slide23">23</a></td>
       </tr>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Datos, grains y pillar</a></th>
+        <th><a href="#slide24">Datos, grains</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Utilidades integradas</a></th>
+        <th><a href="#slide25">Datos, pillar</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">salt-renderer</a></th>
+        <th><a href="#slide26">Utilidades integradas</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">salt-returner</a></th>
+        <th><a href="#slide27">salt-renderer</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
       
       <tr id="toc-row-28">
-        <th><a href="#slide28">salt-runner</a></th>
+        <th><a href="#slide28">salt-returner</a></th>
         <td><a href="#slide28">28</a></td>
       </tr>
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">salt-cloud</a></th>
+        <th><a href="#slide29">salt-runner</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">salt-formulas</a></th>
+        <th><a href="#slide30">Ejecución ejemplo</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Instalación</a></th>
+        <th><a href="#slide31">salt-cloud</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Script de instalación del minion</a></th>
+        <th><a href="#slide32">salt-formulas</a></th>
         <td><a href="#slide32">32</a></td>
       </tr>
       
       
       <tr id="toc-row-33">
-        <th><a href="#slide33">Operativa</a></th>
+        <th><a href="#slide33">Peer communication</a></th>
         <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Instalación</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Script de instalación del minion</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Operativa</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-37">
+        <th><a href="#slide37">Operativa</a></th>
+        <td><a href="#slide37">37</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-38">
+        <th><a href="#slide38">Caso de uso</a></th>
+        <td><a href="#slide38">38</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-39">
+        <th><a href="#slide39">Caso de uso</a></th>
+        <td><a href="#slide39">39</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-40">
+        <th><a href="#slide40">Salteando</a></th>
+        <td><a href="#slide40">40</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-41">
+        <th><a href="#slide41">-</a></th>
+        <td><a href="#slide41">41</a></td>
       </tr>
       
       

@@ -5,10 +5,11 @@
 # ¿Porqué Saltstack?
 
 * No solo configuración, apunta a ser una **solución completa**
+    * Orquestación, aprovisionamiento, ...
 * **Eficiencia**
-* **Pythónico**
+* **Pythónico** a todos los niveles
     * Escrito en **python**
-    * Recetas en formato **YAML**
+    * Recetas en formato de definición **YAML**
     * Plantillas en formato **jinja**
 * **Módulos propios asequibles**
 * **Software libre** y [desarrollándose rápido](http://docs.saltstack.com/en/latest/topics/releases/2014.7.0.html)
@@ -23,6 +24,7 @@
 * Utiliza un **sistema de mensajería** llamado [RAET](https://github.com/saltstack/raet) desarrollado por ellos 
     * Antes ZeroMQ, pero tenía problemas de escalabilidad
 * El minion **consume la cola de mensajes**, sin puertos abiertos
+    * Periodicamente cada 5 segundos (configurable)
 * **Conexión cifrada**, requiere validar la key del cliente en el servidor
 * **Minion independiente**, permite **reconfiguración sin servidor**
 
@@ -34,7 +36,7 @@
 * Receta
 * Estado
 * Módulo
-* Archivo top.sls
+* Asociación de minions con recetas
 * Datos
     * Grains
     * Pillar
@@ -43,11 +45,11 @@
 ---
 
 # Receta
-* Archivo YAML con la de definición de estados
-* Discriminas en la receta según datos (grains o pillar)
+* Archivo [YAML](http://es.wikipedia.org/wiki/YAML) con la de **definición de estados**
+* Puedes **discriminar** en la receta **según datos** (grains o pillar)
 
 # Ejemplo
-    !yaml
+    !bash
     # /srv/salt/mimysql.sls
     mysql-server:
         pkg:
@@ -60,10 +62,12 @@
             - watch:
                 - file: /etc/mysql/conf.d/default.cnf
 
+    {% if pillar['administrado'] == 'apsl' %}
     edu:
         mysql_user.present:
             - host: localhost
             - password: apsl
+    {% endif %}
 ---
 
 # Estado
@@ -85,9 +89,9 @@
 * [Ejemplo](https://github.com/saltstack/salt/blob/develop/salt/modules/mysql.py#L1006)
 
 --- 
-# Archivo top.sls
+# Asociación de minions con recetas
 
-* Relacionar minions con recetas
+* Se hace mediante un archivo de definición top.sls
 
 # Ejemplo
 
@@ -110,40 +114,50 @@
 
 ---
 
-# Datos, grains y pillar
+# Datos, grains
 
-* Grains
-    * **Datos de sistema** que se guardan **al iniciar el minion**
-        * Sistema operativo
-        * Versiones
-        * Información de hardware: MAC, IP's
-    * **Datos estáticos**, que no se modifiquen
-    * Consulta con: salt host grains.items
-* Pillar
-    * Diccionario de **datos propios**
-    * Para pasar datos especificos de servicio o aplicación
-    * Reaprovechar recetas
-    * Consulta con: salt host pillar.items
+* **Datos de sistema** que se guardan **al iniciar el minion**
+    * Sistema operativo
+    * Versiones
+    * Información de hardware: MAC, IP's
+* Puedes guardar tus **datos estáticos** que no se modifiquen
+    * Desde /etc/salt/minion
+
+    
+--- 
+
+# Datos, pillar
+
+* Diccionario de **datos propios**
+* Archivos de definición YAML
+* Para pasar datos especificos de servicio o aplicación
+* **Reaprovechar recetas**
+* **Ruta** de los archivos por defecto: /srv/pillar
+* **Asociar datos con hosts**
+    * Idem que con recetas: /srv/pillar/top.sls
+
             
 --- 
 # Utilidades integradas
-
-* salt-renderer
-* salt-returner
-* salt-runner
-* salt-cloud
-* salt-formulas
+* Saltstack se complementa con una serie de utilidades
+    * salt-renderer
+    * salt-returner
+    * salt-runner
+    * salt-cloud
+    * salt-formulas
+    * Peer communication
+    
 
 ---
 
 # salt-renderer
 
 * **Generar los diccionarios de definición** de otra manera que no sea yml
-* Independiente. En top.sls, recetas o pillar. 
-* En el archivo de definicion lo marcamos con la primera linea (shebang)
+* Independiente de donde. En top.sls, recetas o pillar. 
 * **Varios renderers para escoger**: plantillas jinja, mako, python
+* En el archivo de definición lo marcamos con la primera linea (shebang)
 * [Ejemplo](http://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.py.html)
-* Lo utilizamos para traer datos de aplicaciones django desde nuestro backend
+* Lo utilizamos para traer datos de aplicaciones desde nuestro backend
             
 ---
 
@@ -151,14 +165,47 @@
 
 * Por defecto los valores devueltos por los comandos salt son devueltos al master
 * **Recoger los resultados devueltos** de las configuraciones para tratarlos o almacenarlos
-* Útil para un backend propio 
+* Útil para un frontend propio de estadísticas
 * [http://docs.saltstack.com/en/latest/ref/returners/](http://docs.saltstack.com/en/latest/ref/returners/)
 
 ---
 
 # salt-runner
 
-* Permite ejecutar en varios servidores orquestando
+* Código python **similar a un módulo**
+* Pero **se ejecuta siempre en el salt-master**
+* Disponibles [runners propios de salt](http://docs.saltstack.com/en/latest/ref/runners/all/index.html#all-salt-runners)
+* Interesante **para orquestar ejecución en diferentes hosts**
+
+# Ejemplo
+    !python
+    # Import salt modules
+    import salt.client
+
+    def up():
+        '''
+        Print a list of all of the minions that are up
+        '''
+        client = salt.client.LocalClient(__opts__['conf_file'])
+        minions = client.cmd('*', 'test.ping', timeout=1)
+        for minion in sorted(minions):
+            print minion
+
+---
+
+# Ejecución ejemplo
+
+    !bash
+    # salt-run test.up
+    acan.sandosmx.com
+    agenda500-db.dov.apsl.net
+    agenda500-worker.dov.apsl.net
+    arqueobcn-db.dov.apsl.net
+    arqueobcn-worker.dov.apsl.net
+    bb02.v5tech.es
+    bb03.v5tech.es
+    bb04.v5tech.es
+    ...
 
 ---
 
@@ -180,13 +227,23 @@
 # salt-formulas
 
 * Recetas compartidas comunitariamente
-* [Información oficial de instalacion](http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html)
+* [Información oficial de instalación](http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html)
 * **Permite GitFs** desde archivo de config o copiando a disco
 * **[Hay muchas preparadas](https://github.com/saltstack-formulas)**
 * [Ejemplo](https://github.com/saltstack-formulas/mysql-formula)
 * [Solo configuras mediante pillar](https://github.com/saltstack-formulas/mysql-formula/blob/master/pillar.example)
         
 --- 
+
+# Peer communication
+
+* Permite **desde un minion ejecutar modulos en otro minion**
+* Se definen **permisos** en /etc/salt/master
+* **Desde un estado**
+* Utilizando el **modulo publish**
+* [Más Información](http://docs.saltstack.com/en/latest/ref/peer.html)
+
+---
 
 # Instalación
 
@@ -226,12 +283,22 @@
 ---
 
 # Operativa
-
-* *salt mihost state.sls mireceta*
+* *salt-key -L*
+    * Listar los minions asociados y por asociar
+* *salt-key -a host*
+    * Asociar un minion que está pendiente
+* *salt-key -d host*
+    * Desasociar un minion que está pendiente    
+* ***salt mihost state.sls mireceta***
     * Aplicar la receta mireceta.sls a mihost
-* *salt mihost state.highstate*
+* ***salt mihost state.highstate***
     * Sincroniza todo custom modules|states, pillar, recetas
     * Aplica recetas del top.sls asociadas a mihost
+    
+--- 
+
+# Operativa
+
 * *salt -v mihost comando*
     * Para incremetar el verbose del comando
 * *salt -l debug mihost comando*

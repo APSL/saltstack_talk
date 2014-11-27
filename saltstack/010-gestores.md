@@ -28,10 +28,11 @@
 * **Arquitectura como código**
     * **Versionado** de configuración mediante repositorio
     * **Documentación** de bajo nivel **innecesaria**
-    
+* **Trivializando operaciones**
+
 ---
 
-# Opciones de los gestores de configuración
+# Opciones de gestores de configuración
 
 * [Muchos sistemas de configuración de código abierto](http://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
 * Más utilizados
@@ -46,14 +47,14 @@
 
 * Ruby
 * Desde 2005
-* Cliente - servidor (puppet-master)
+* Cliente - servidor (puppet-master), por tcp
 * El cliente pide al servidor que se quiere reconfigurar
     * El cliente recoje cada x minutos recetas y las aplica
     * Ejecución manual del cliente
     * Orquestación con Mcollective
-* [Muy buenas recetas ya hechas](https://forge.puppetlabs.com)
-* [Presentación mía sobre puppet](https://speakerdeck.com/creantbits/puppet-labs)
 * **Muy robusto**, aunque desarrollar módulos propios no es sencillo
+* [Muy buenas recetas ya hechas](https://forge.puppetlabs.com)
+* [Presentación propia sobre puppet](https://speakerdeck.com/creantbits/puppet-labs)
 
 ---        
 

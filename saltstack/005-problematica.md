@@ -31,8 +31,8 @@
 
 # Pero aún así es poco practicable
 
-* Muchos servidores
-* Muchos servicios
 * Muchas aplicaciones
 * Muchos entornos
+* Muchos servicios
+* Muchos servidores
 * **Y acelerando!**
